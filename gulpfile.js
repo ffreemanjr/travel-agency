@@ -3,13 +3,9 @@ var gulp = require('gulp'),
     postcss = require('gulp-postcss'),
     autoprefixer = require('autoprefixer'),
     cssvars = require('postcss-simple-vars'),
-<<<<<<< HEAD
-    nested = require('postcss-nested');
-=======
     nested = require('postcss-nested'),
     cssImport = require('postcss-import'),
     browserSync = require('browser-sync').create();
->>>>>>> 296713b1e815f7bcf0d9a1b8e26791cf545150c0
 
 gulp.task('default', function() {
   console.log("Hooray - you created a Gulp task.");
@@ -21,11 +17,7 @@ gulp.task('html', function() {
 
 gulp.task('styles', function () {
  return gulp.src('./app/assets/styles/styles.css')
-<<<<<<< HEAD
-  .pipe(postcss([cssvars, nested, autoprefixer]))
-=======
   .pipe(postcss([cssImport, cssvars, nested, autoprefixer]))
->>>>>>> 296713b1e815f7bcf0d9a1b8e26791cf545150c0
   .pipe(gulp.dest('./app/temp/styles'));
 });
 
